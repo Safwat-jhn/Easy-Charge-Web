@@ -130,3 +130,18 @@ document.querySelectorAll('.card').forEach(card => {
     card.style.transition = 'all 0.6s ease-out';
     observer.observe(card);
 });
+
+// Dynamic Header Visibility
+const header = document.querySelector('header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Scrolling down
+        header.classList.add('header-hidden');
+    } else {
+        // Scrolling up
+        header.classList.remove('header-hidden');
+    }
+    lastScrollY = window.scrollY;
+});

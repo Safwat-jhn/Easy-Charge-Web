@@ -4,12 +4,14 @@
     --primary-green: #29d884;
     --primary-blue: #00b4d8;
     --primary-emerald: #10b981;
-    --bg-dark: #0a0f18;
-    /* Retaining for sections if needed */
-    --bg-card: rgba(255, 255, 255, 0.05);
-    --text-white: #ffffff;
-    --text-muted: #a0aec0;
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-dark: #f0fdf4;
+    /* Light Green Background */
+    --bg-card: rgba(255, 255, 255, 0.7);
+    /* Light Card Background */
+    --text-white: #064e3b;
+    /* Dark Green Text */
+    --text-muted: #374151;
+    --glass-border: rgba(5, 150, 105, 0.1);
     --gradient-green: linear-gradient(135deg, #34d399 0%, #059669 100%);
     --gradient-main: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
     --transition: all 0.3s ease;
@@ -76,15 +78,21 @@ ul {
 /* --- Header & Navbar --- */
 header {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    width: calc(100% - 20px);
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 60px);
+    max-width: 1100px;
     z-index: 1000;
-    background: rgba(10, 15, 24, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
-    border-radius: 18px 18px 0 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+header.header-hidden {
+    transform: translate(-50%, -120%);
 }
 
 nav {
@@ -168,8 +176,8 @@ nav {
     align-items: center;
     position: relative;
     padding-top: 80px;
-    background: radial-gradient(circle at top right, rgba(0, 180, 216, 0.1), transparent),
-        radial-gradient(circle at bottom left, rgba(41, 216, 132, 0.1), transparent);
+    background: radial-gradient(circle at top right, rgba(0, 180, 216, 0.05), transparent),
+        radial-gradient(circle at bottom left, rgba(41, 216, 132, 0.05), transparent);
     overflow: hidden;
 }
 
